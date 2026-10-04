@@ -13,5 +13,11 @@ pipeline{
               bat 'mvn test'
           }
        }
+
+       stage('Build Docker Image'){
+          steps{
+             bat 'docker build -t notification-engine .'
+          }
+       }
    }
 }
